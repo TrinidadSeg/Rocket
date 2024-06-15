@@ -19,6 +19,9 @@ def add_to_cart(product_id):
             break
 
 # Streamlit layout
+
+with st.sidebar:
+    st.text("hi")
 st.title("E-Commerce Store")
 
 # Display products
