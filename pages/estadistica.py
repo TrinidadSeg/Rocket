@@ -26,6 +26,8 @@ with left:
 with right:
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Arca_Continental_logo.svg/800px-Arca_Continental_logo.svg.png")
 
+dataframe1 = pd.read_excel('pages/BaseDatos_Usarios.xlsx')
+st.dataframe(dataframe1)
 
 chart_data = pd.DataFrame(np.random.randn(20, 2), columns=["Venta de productos", "Porcentaje de Ventas"])
 
