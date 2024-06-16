@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sidebar import buttons_difficulty_sidebar
+
+buttons_difficulty_sidebar()
 
 if 'name' not in st.session_state:
     st.session_state.name = "Invitado"

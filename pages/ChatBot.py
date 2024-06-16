@@ -4,6 +4,9 @@ from data import one_data_gpt_predefinded
 from data import two_data_gpt_predefinded
 from data import three_data_gpt_predefinded
 from data import four_data_gpt_predefinded
+from sidebar import buttons_difficulty_sidebar
+
+buttons_difficulty_sidebar()
 
 if 'name' not in st.session_state:
     st.session_state.name = "Invitado"

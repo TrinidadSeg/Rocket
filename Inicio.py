@@ -34,5 +34,5 @@ if st.session_state.difficulty=="Easy":
 
 #Hard
 elif st.session_state.difficulty=="Hard":
-    st.write("Harddd")
-
+    st.subheader("¡Bienvenido!")
+    st.column
