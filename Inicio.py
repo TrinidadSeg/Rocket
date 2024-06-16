@@ -7,6 +7,8 @@ if 'difficulty' not in st.session_state:
 
 buttons_difficulty_sidebar()
 
+if 'name' not in st.session_state:
+    st.session_state.name = "Invitado"
 
 st.title("Arca Continental")
 

@@ -1,6 +1,10 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+
+if 'name' not in st.session_state:
+    st.session_state.name = "Invitado"
+
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
@@ -9,7 +13,7 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-custom_header("Trini", "fffff")
+custom_header(f"{st.session_state.name}", "fffff")
 
 # read by default 1st sheet of an excel file
 df = pd.read_excel('pages/BaseDatos_PreciosMexico.xlsx')
