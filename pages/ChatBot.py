@@ -8,6 +8,9 @@ from data import four_data_gpt_predefinded
 st.title("ContinentalBot")
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
+if 'name' not in st.session_state:
+    st.session_state.name = "Invitado"
+
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 

@@ -13,13 +13,8 @@ def compare_user_credentials(username, email, password):
         stored_email = user_row.iloc[0]['Email']
         stored_password = user_row.iloc[0]['Password']
         if email == stored_email and password == stored_password:
-<<<<<<< HEAD
-           st.text("Has ingresado exitosmanete")
-           st.session_state.name = username  # Actualizamos el nombre en session_state
-=======
            st.text("Has ingresado exitosamente")
            st.session_state.name = name
->>>>>>> ac72283046ba256ad077b7c88a5dc370787e24ab
            is_login = True
         else:
             st.text("Nombre, correo o contraseña incorrecta")
