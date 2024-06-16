@@ -14,12 +14,13 @@ custom_header("Trini", "fffff")
 # read by default 1st sheet of an excel file
 df = pd.read_excel('pages/BaseDatos_PreciosMexico.xlsx')
     # Inputs for row index and column name
-row_index = st.number_input("Enter row index", min_value=0, max_value=len(df)-1, step=1)
-column_name = st.text_input("Enter column name")
+st.dataframe(df)
 list_of_products = []
 list_of_prices = []
 for counter in range(0,511):
-    list_of_products.append(df.loc[counter, "Material.1"])
+    name = df.loc[counter, "Material.1"]
+    name = name[:-9]
+    list_of_products.append(name)
     list_of_prices.append(df.loc[counter, "Precio Final"])
     counter+=1
 
@@ -50,10 +51,10 @@ st.header("Productos")
 for product in products:
     col1, col2, col3 = st.columns([3, 1, 1])
     with col1:
-        st.write(f"**{product['name']}** - ${product['price']}")
+        st.write(f"{product['name']} - ${product['price']}")
         st.write("hi")
     with col2:
-        st.button("Add to Cart", key=product['id'], on_click=add_to_cart, args=(product['id'],))
+        st.button("Agrega al Carrito", key=product['id'], on_click=add_to_cart, args=(product['id'],))
 
 
 # Display shopping cart
