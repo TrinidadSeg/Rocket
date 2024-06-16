@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pt
+
+
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
@@ -34,6 +36,13 @@ with st.popover("Crea tu cuenta o Inscribete"):
             if name == st.session_state.name:
                 st.text("Ya estas dentro de esta cuenta")
             else:
+                try:
+                    existing_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
+                except FileNotFoundError:
+                    existing_data = pt.DataFrame(columns=['Username','Email','Password'])
+                new_row = pt.DataFrame({'Username': [name], 'Email': [email], 'Password' : [password]})
+                user_data = pt.concat([existing_data, new_row], ignore_index=True)
+                user_data.to_excel('pages/BaseDatos_Usarios.xlsx',index = False)
                 cuenta = [st.session_state.name, email, password]
                 st.session_state.name = name
                 st.text("Has accesado a tu cuenta exitosamente")
