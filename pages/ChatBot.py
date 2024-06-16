@@ -44,15 +44,11 @@ with st.chat_message("assistant"):
         st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
 
 
-
-# User input field
 if prompt := st.chat_input("Escriba su pregunta aquí"):
-    # Add user message to session state
     st.session_state.messages.append({"role": "user", "content": f"Usted: {prompt}"})
     with st.chat_message("user"):
         st.markdown(f"Usted: {prompt}")
 
-    # Retrieve response from OpenAI
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
             model=st.session_state["openai_model"],
@@ -62,8 +58,6 @@ if prompt := st.chat_input("Escriba su pregunta aquí"):
             ],
             stream=True,
         )
-        # Read and display response from OpenAI
         response = st.write_stream(stream)
     
-    # Add assistant's response to session state
     st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
