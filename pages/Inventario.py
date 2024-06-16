@@ -46,7 +46,7 @@ def add_to_cart(product_id):
 
 
 # Display products
-st.header("Products")
+st.header("Productos")
 for product in products:
     col1, col2, col3 = st.columns([3, 1, 1])
     with col1:
@@ -57,24 +57,24 @@ for product in products:
 
 
 # Display shopping cart
-st.header("Shopping Cart")
+st.header("Carrito de Compras")
 if st.session_state.cart:
     total = 0
     for item in st.session_state.cart:
         st.write(f"{item['name']} - ${item['price']}")
-        total += item['price']
+        total += float(item['price'])
     st.write(f"**Total: ${total:.2f}**")
 else:
-    st.write("Your cart is empty.")
+    st.write("Tu carrito esta vacio.")
 
 # Clear cart button
-if st.button("Clear Cart"):
+if st.button("Limpiar Carrito"):
     st.session_state.cart = []
 
 # Purchase button (mock functionality)
-if st.button("Purchase"):
+if st.button("Compra tu carrito"):
     if st.session_state.cart:
-        st.success("Purchase successful!")
+        st.success("Compra Exitosa!")
         st.session_state.cart = []
     else:
-        st.error("Your cart is empty.")
+        st.error("Tu carrito esta vacio")
