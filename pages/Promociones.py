@@ -49,16 +49,16 @@ with col2:
         st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
     elif st.session_state.name=="Alejandro Acosta":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Una botella Fanta de litro por cada cino bottelas de litro de Coca-Cola")
     elif st.session_state.name=="Hector Molino":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
         st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
     elif st.session_state.name=="Jessica Paz":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Una botella Vitamin Water de 500ml por cada six-pack de Powerade")
     elif st.session_state.name=="Karina Torres":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Sies latas Del Valle de 250ml por cada docena de Tetrapack Santa Clara de litro.")
     else:
         st.write("Inicie sesión para mas promociones personalizadas")
     st.button("Usar promocion", key="regalo")
@@ -67,19 +67,19 @@ with col3:
     st.subheader("Combo")
     if st.session_state.name=="Carlos Flores":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Cobmo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
     elif st.session_state.name=="Alejandro Acosta":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Combo de 12 Botellas Sprite de 1.0L y 24 botellas Fanta de 500ml a $470")
     elif st.session_state.name=="Hector Molino":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Cobmo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
     elif st.session_state.name=="Jessica Paz":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Combo de 6 botellas Poweradede 1.0L y 6 botellas Vitamina Water a $250 ")
     elif st.session_state.name=="Karina Torres":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("")
+        st.write("Combo de 12 Tetrapack Del Valle de 250ml y 3 Tetrapack Santa Clara de 200ml a $100")
     else:
         st.write("Inicie sesión para mas promociones personalizadas")
     st.button("Usar promocion", key="combo")
