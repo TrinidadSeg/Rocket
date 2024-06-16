@@ -1,33 +1,34 @@
-print("Hello World")
 import streamlit as st
 import pandas as pd
 
 # Create a sample DataFrame
 data = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
-    'Age': [24, 27, 22, 32, 29],
-    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']
+    'Year': [2017, 2018, 2019, 2020, 2021],
+    'Alice': [24, 27, 30, 35, 40],
+    'Bob': [20, 25, 29, 33, 35],
+    'Charlie': [22, 24, 26, 30, 32],
+    'David': [28, 29, 32, 34, 36],
+    'Eve': [25, 26, 28, 31, 34]
 }
 df = pd.DataFrame(data)
 
-# Function to create HTML buttons
-def create_html_button(index):
-    return f'<button onclick="alert(\'Button {index} clicked\')">Click Me</button>'
-
-# Add a column with buttons to the DataFrame
-df['Action'] = df.index.map(lambda x: create_html_button(x))
-
-# Function to render the DataFrame with buttons
-def render_df_with_buttons(dataframe):
-    # Convert DataFrame to HTML
-    html = dataframe.to_html(escape=False)
-    # Render the HTML in Streamlit
-    st.markdown(html, unsafe_allow_html=True)
-
 # Display the original DataFrame
 st.write("Original DataFrame:")
-st.dataframe(df.drop(columns=['Action']))  # Display without the buttons column for comparison
+st.dataframe(df)
 
-# Display the DataFrame with buttons
-st.write("DataFrame with Buttons:")
-render_df_with_buttons(df)
+# Row selection
+selected_row = st.selectbox("Select a person to plot", df.columns[1:])
+
+# Extract data for the selected row
+row_data = df[['Year', selected_row]]
+
+# Set 'Year' as the index
+row_data.set_index('Year', inplace=True)
+
+# Plot the data as a line chart
+st.write(f"Line Chart for {selected_row}:")
+st.line_chart(row_data)
+
+# Display the row data
+st.write("Data for the selected row:")
+st.dataframe(row_data)
