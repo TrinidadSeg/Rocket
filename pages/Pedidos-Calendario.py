@@ -1,4 +1,6 @@
 import streamlit as st
+import datetime
+import streamlit as st
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
@@ -8,3 +10,16 @@ def custom_header(User, background_color):
     """
     st.markdown(html_code, unsafe_allow_html=True)
 custom_header("Trini", "fffff")
+
+st.title("Pedidos y Calendario")
+
+st.subheader("Lista de Pedidos")
+st.write("Aquí se encuentra una lista con los pedidos futuros.")
+
+
+
+
+calendario = st.date_input("¿Para cuando quieres agendar tu pedido?", datetime.date.today())
+h = datetime.date.today()
+st.write(h)
+st.write("Tu siguiente pedido es para:", calendario)
