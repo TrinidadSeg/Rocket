@@ -4,10 +4,20 @@ import numpy as np
 from sidebar import buttons_difficulty_sidebar
 
 buttons_difficulty_sidebar()
-
+ind = 9
 if 'name' not in st.session_state:
     st.session_state.name = "Invitado"
 
+if st.session_state.name == "Carlos Flores":
+    ind = 0
+if st.session_state.name == "Alejandro Acosta":
+    ind = 1
+if st.session_state.name == "Hector Molino":
+    ind = 2
+if st.session_state.name == "Jessica Paz":
+    ind = 3
+if st.session_state.name == "Karina Torres":
+    ind = 4
 
 def custom_header(User, background_color):
     html_code = f"""
@@ -30,15 +40,19 @@ with right:
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Arca_Continental_logo.svg/800px-Arca_Continental_logo.svg.png")
 
 dataframe1 = pd.read_excel('pages/BaseDatos_Usarios.xlsx')
-st.dataframe(dataframe1)
 sales = []
-columns_to_select =['Semana1', 'Semana2','Semana3','Semana4','Semana5','Semana6','Semana7','Semana8',]
-smaller_df = dataframe1[columns_to_select]
+columns_to_select =[1,2,3,4,5,6,7,8]
+years = [1,2,3,4,5,6,7,8]
+expenditure = []
+st.session_state.name
+for i in range(4,12):
+    expenditure.append(dataframe1.iloc[ind][i])
 
-row_data = dataframe1['Carlos Flores']
-st.line_chart(row_data)
 
+chart_data = pd.DataFrame(
+    {
+        "Gastos": columns_to_select,
+        "Semanas": expenditure,
+        })
 
-chart_data = pd.DataFrame(list, columns=["Venta de productos", "Porcentaje de Ventas"])
-
-st.line_chart(chart_data)
+st.line_chart(chart_data, x="Semanas", y="Gastos")
