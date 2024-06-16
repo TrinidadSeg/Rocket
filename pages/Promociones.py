@@ -67,13 +67,13 @@ with col3:
     st.subheader("Combo")
     if st.session_state.name=="Carlos Flores":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("Cobmo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
+        st.write("Combo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
     elif st.session_state.name=="Alejandro Acosta":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
         st.write("Combo de 12 Botellas Sprite de 1.0L y 24 botellas Fanta de 500ml a $470")
     elif st.session_state.name=="Hector Molino":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("Cobmo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
+        st.write("Combo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
     elif st.session_state.name=="Jessica Paz":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
         st.write("Combo de 6 botellas Poweradede 1.0L y 6 botellas Vitamina Water a $250 ")
