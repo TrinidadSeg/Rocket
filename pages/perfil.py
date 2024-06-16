@@ -27,7 +27,7 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-custom_header("Trini", "fffff")
+#custom_header("Trini", "fffff")
 
 if 'name'  not in st.session_state:
     st.session_state.name = "Usuario no definido"
@@ -73,6 +73,8 @@ with column2:
         if st.button("Ingresar"):   
                 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')    
                 compare_user_credentials(name, email, password)
+                custom_header(name, "fffff")
+
 
 st.subheader(f"Mi ubicacion es {st.session_state.location}")
 
