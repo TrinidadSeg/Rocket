@@ -13,8 +13,6 @@ def buttons_difficulty_sidebar():
     }
     </style>
     """
-    
-    # Inject the custom CSS into the Streamlit app
     st.markdown(sidebar_css, unsafe_allow_html=True)
 
     with st.sidebar:
@@ -22,3 +20,5 @@ def buttons_difficulty_sidebar():
             st.session_state.difficulty = 'Easy'
         if st.button("Navegador completo"):
             st.session_state.difficulty = 'Hard'
+
+    st.logo("assets\Arca_Continental_logo.svg (1).png")

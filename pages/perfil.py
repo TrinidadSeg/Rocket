@@ -1,10 +1,12 @@
 import streamlit as st
 import pandas as pt
 is_login = False
+from sidebar import buttons_difficulty_sidebar
+
 
 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
 
-
+buttons_difficulty_sidebar()
 
 def compare_user_credentials(username, email, password):
     global is_login 
