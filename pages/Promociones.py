@@ -1,4 +1,9 @@
 import streamlit as st
+
+if 'name' not in st.session_state:
+    st.session_state.name = "Invitado"
+
+
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
@@ -7,22 +12,74 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-custom_header("Trini", "fffff")
+custom_header(f"{st.session_state.name}", "fffff")
 
 st.header("Promociones")
+st.write(f"{st.session_state.name}, aquí te dejamos una promociones personalizadas para ti. Inicia sesión o crea una cuenta para acceder a ellas")
 
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.subheader("Descuento")
+    st.subheader("Descuentos")
+    if st.session_state.name=="Carlos Flores":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("10% en los botellones Ciel")
+    elif st.session_state.name=="Alejandro Acosta":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("Descuento del 20% en todas las latas de Sprite y Fanta")
+    elif st.session_state.name=="Hector Molino":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("5 pesos menos a cada botella de 2L de Coca-Cola sin azúcar")
+    elif st.session_state.name=="Jessica Paz":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("Descuento del 10% en todas las botellas Powerade")
+    elif st.session_state.name=="Karina Torres":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("5% menos a todos los productos de Santa Clara")
+    else:
+        st.write("Inicie sesión para mas promociones personalizadas")
+    st.button("Usar promocion", key="descuento")
     
-    st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
 
 
 with col2:
     st.subheader("Regalo")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Argentina.png/1200px-Flag_of_Argentina.png", width=50)
+    if st.session_state.name=="Carlos Flores":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
+    elif st.session_state.name=="Alejandro Acosta":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Hector Molino":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
+    elif st.session_state.name=="Jessica Paz":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Karina Torres":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    else:
+        st.write("Inicie sesión para mas promociones personalizadas")
+    st.button("Usar promocion", key="regalo")
 
 with col3:
     st.subheader("Combo")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/2560px-Flag_of_Peru_%28state%29.svg.png", width=50)
+    if st.session_state.name=="Carlos Flores":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Alejandro Acosta":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Hector Molino":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Jessica Paz":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    elif st.session_state.name=="Karina Torres":
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+        st.write("")
+    else:
+        st.write("Inicie sesión para mas promociones personalizadas")
+    st.button("Usar promocion", key="combo")

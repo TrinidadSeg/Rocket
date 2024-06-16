@@ -4,13 +4,17 @@ is_login = False
 
 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
 
+
+
 def compare_user_credentials(username, email, password):
+    global is_login 
     user_row = user_data[user_data['Username'] == username]
     if not user_row.empty:
         stored_email = user_row.iloc[0]['Email']
         stored_password = user_row.iloc[0]['Password']
         if email == stored_email and password == stored_password:
            st.text("Has ingresado exitosmanete")
+           st.session_state.name = username  # Actualizamos el nombre en session_state
            is_login = True
         else:
             st.text("Nombre, correo o contraseña incorrecta")
