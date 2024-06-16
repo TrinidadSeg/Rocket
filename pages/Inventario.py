@@ -119,6 +119,7 @@ if st.session_state.difficulty=="Hard":
         st.write("Filtered DataFrame with Buttons:")
         render_df_with_buttons(filtered_df,1000)
 
+        
         # Display text for each button clicked
         for index in range(len(filtered_df)):
             if f'button_clicked_{index}' in st.session_state and st.session_state[f'button_clicked_{index}']:
@@ -130,7 +131,9 @@ if st.session_state.difficulty=="Hard":
 
         st.header("Carrito de Compras")
         if st.session_state.cart:
-            total = 0
+  
+            st.write(f"**Total: ${total:.2f}**")
+
             for item in st.session_state.cart:
                 st.write(f"{item['name']} - ${item['price']}")
                 total += float(item['price'])
@@ -179,6 +182,7 @@ elif st.session_state.difficulty=="Easy":
 
         st.write("Productos Filtrados")
         render_df_with_buttons(filtered_df,2000)
+      
 
         for index in range(len(filtered_df)):
             if f'button_clicked_{index}' in st.session_state and st.session_state[f'button_clicked_{index}']:
@@ -189,6 +193,14 @@ elif st.session_state.difficulty=="Easy":
             st.session_state.cart = []
 
         st.header("Carrito de Compras")
+        total = 0
+        st.write(f"COCA-COLA 1.00 L NR PET 12 - $241.50")
+        total += float(241.50)
+        st.write(f"POWERADE LIMALIM 1.00 L NR PET 6 - $152.00")
+        total += float(152.00)
+        st.write(f"**Total: ${total:.2f}**")
+        
+        
         if st.session_state.cart:
             total = 0
             for item in st.session_state.cart:
@@ -196,7 +208,7 @@ elif st.session_state.difficulty=="Easy":
                 total += float(item['price'])
             st.write(f"**Total: ${total:.2f}**")
         else:
-            st.write("Tu carrito está vacío.")
+            st.write("")
 
         # Clear cart button
         if st.button("Limpiar Carrito", key = 696968):
@@ -209,3 +221,4 @@ elif st.session_state.difficulty=="Easy":
                 st.session_state.cart = []
             else:
                 st.error("Tu carrito está vacío")
+        

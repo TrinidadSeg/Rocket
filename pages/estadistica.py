@@ -42,7 +42,6 @@ with right:
 dataframe1 = pd.read_excel('pages/BaseDatos_Usarios.xlsx')
 sales = []
 columns_to_select =[1,2,3,4,5,6,7,8]
-years = [1,2,3,4,5,6,7,8]
 expenditure = []
 st.session_state.name
 for i in range(4,12):
@@ -51,8 +50,8 @@ for i in range(4,12):
 
 chart_data = pd.DataFrame(
     {
-        "Gastos": columns_to_select,
-        "Semanas": expenditure,
+        "Semanas": columns_to_select,
+        "Gastos": expenditure,
         })
 
 st.line_chart(chart_data, x="Semanas", y="Gastos")
