@@ -39,7 +39,9 @@ with st.popover("Crea tu cuenta o Inscribete"):
                 st.text("Has accesado a tu cuenta exitosamente")
 
 
-st.header(f"Mi ubicacion es {st.session_state.location}")
+st.subheader(f"Mi ubicacion es {st.session_state.location}")
+
+
 with st.expander("Deseo cambiar mi ubicacion"):
     new_location = st.text_input("Escibe tu nueva ubicacion")
     if new_location and password:
@@ -52,7 +54,24 @@ with st.expander("Deseo cambiar mi ubicacion"):
         if new_location: 
             st.text("Por favor accesa tu cuenta")
 
-st.header(f"Mi numero de contacto es {numero}")
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.button("Mexico")
+        st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+
+    with col2:
+        st.button("Argentina")
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Argentina.png/1200px-Flag_of_Argentina.png", width=50)
+
+    with col3:
+        st.button("Peru")
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/2560px-Flag_of_Peru_%28state%29.svg.png", width=50)
+
+    with col4:
+        st.button("Ecuador")
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/2560px-Flag_of_Ecuador.svg.png", width=50)
+
+st.subheader(f"Mi numero de contacto es {numero}")
 st.expander("Cambiar mi numero de telefono")
 with st.expander("Deseo cambiar mi telefono"):
     new_location = st.text_input("Escibe tu nuevo numero de telefono")
