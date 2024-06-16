@@ -10,7 +10,8 @@ def compare_user_credentials(username, email, password):
         stored_email = user_row.iloc[0]['Email']
         stored_password = user_row.iloc[0]['Password']
         if email == stored_email and password == stored_password:
-           st.text("Has ingresado exitosmanete")
+           st.text("Has ingresado exitosamente")
+           st.session_state.name = name
            is_login = True
         else:
             st.text("Nombre, correo o contraseña incorrecta")
@@ -26,7 +27,7 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-#custom_header("Trini", "fffff")
+custom_header("Trini", "fffff")
 
 if 'name'  not in st.session_state:
     st.session_state.name = "Usuario no definido"
@@ -62,7 +63,7 @@ with column1:
                     user_data = pt.concat([existing_data, new_row], ignore_index=True)
                     user_data.to_excel('pages/BaseDatos_Usarios.xlsx',index = False)
                     cuenta = [st.session_state.name, email, password]
-                    st.session_state.name = name
+                    #st.session_state.name = name
                     st.text("Has accesado a tu cuenta exitosamente. Porfavor Ingrese con su cuenta")
 with column2:
     with st.popover("Ingresa a su cuenta"):
@@ -72,7 +73,7 @@ with column2:
         if st.button("Ingresar"):   
                 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')    
                 compare_user_credentials(name, email, password)
-                custom_header(name, "fffff")
+                
 
 
 st.subheader(f"Mi ubicacion es {st.session_state.location}")
