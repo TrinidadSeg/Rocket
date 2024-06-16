@@ -31,7 +31,14 @@ with right:
 
 dataframe1 = pd.read_excel('pages/BaseDatos_Usarios.xlsx')
 st.dataframe(dataframe1)
+sales = []
+columns_to_select =['Semana1', 'Semana2','Semana3','Semana4','Semana5','Semana6','Semana7','Semana8',]
+smaller_df = dataframe1[columns_to_select]
 
-chart_data = pd.DataFrame(np.random.randn(20, 2), columns=["Venta de productos", "Porcentaje de Ventas"])
+row_data = dataframe1['Carlos Flores']
+st.line_chart(row_data)
+
+
+chart_data = pd.DataFrame(list, columns=["Venta de productos", "Porcentaje de Ventas"])
 
 st.line_chart(chart_data)
