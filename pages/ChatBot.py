@@ -29,7 +29,7 @@ with st.chat_message("assistant"):
             ],
             stream=True,
         )
-        response = st.write("En que te puedo ayudar?")
+        response = st.write("¡Bienvenido!")
         st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
 
 
@@ -44,7 +44,7 @@ with st.chat_message("assistant"):
             ],
             stream=True,
         )
-        response = st.write("En que te puedo ayudar?")
+        response = st.write("Soy ContinentalBot, el asistente de Inteligencia Artificial listo para ayudarte con lo que quieras!")
         st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
 
 
@@ -59,7 +59,7 @@ with st.chat_message("assistant"):
             ],
             stream=True,
         )
-        response = st.write("En que te puedo ayudar?")
+        response = st.write("Con acceso a tu perfil, puedo conocer más sobre ti y darte ayuda más personalizada")
         st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
 
 
@@ -76,8 +76,6 @@ with st.chat_message("assistant"):
         )
         response = st.write("En que te puedo ayudar?")
         st.session_state.messages.append({"role": "assistant", "content": f"ContinentalBot: {response}"})
-
-
 
 
 
