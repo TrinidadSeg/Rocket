@@ -4,19 +4,22 @@ is_login = False
 
 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
 
+
+
 def compare_user_credentials(username, email, password):
+    global is_login 
     user_row = user_data[user_data['Username'] == username]
     if not user_row.empty:
         stored_email = user_row.iloc[0]['Email']
         stored_password = user_row.iloc[0]['Password']
         if email == stored_email and password == stored_password:
-           st.text("Has ingresado exitosmanete")
+           st.text("Has ingresado exitosamente")
+           st.session_state.name = name
            is_login = True
         else:
             st.text("Nombre, correo o contraseña incorrecta")
     else:
         st.text("Usario no encontrado.")
-
 
 
 def custom_header(User, background_color):
@@ -65,7 +68,7 @@ with column1:
                     user_data = pt.concat([existing_data, new_row], ignore_index=True)
                     user_data.to_excel('pages/BaseDatos_Usarios.xlsx',index = False)
                     cuenta = [st.session_state.name, email, password]
-                    st.session_state.name = name
+                    #st.session_state.name = name
                     st.text("Has accesado a tu cuenta exitosamente. Porfavor Ingrese con su cuenta")
 with column2:
     with st.popover("Ingresa a su cuenta"):
@@ -75,6 +78,8 @@ with column2:
         if st.button("Ingresar"):   
                 user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')    
                 compare_user_credentials(name, email, password)
+                
+
 
 st.subheader(f"Mi ubicacion es {st.session_state.location}")
 
