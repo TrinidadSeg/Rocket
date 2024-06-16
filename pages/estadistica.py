@@ -9,7 +9,7 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-custom_header("Trini", "fffff")  # Green background
+custom_header("Trini", "fffff")
 
 left, right = st.columns([3,1])
 
@@ -20,3 +20,8 @@ with left:
     st.header("Mis Estadisticas")
 with right:
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Arca_Continental_logo.svg/800px-Arca_Continental_logo.svg.png")
+
+
+chart_data = pd.DataFrame(np.random.randn(20, 2), columns=["Venta de productos", "Porcentaje de Ventas"])
+
+st.line_chart(chart_data)
