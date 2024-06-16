@@ -18,7 +18,6 @@ def compare_user_credentials(username, email, password):
         st.text("Usario no encontrado.")
 
 
-
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
