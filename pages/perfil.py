@@ -5,6 +5,7 @@ if 'name'  not in st.session_state:
 if 'location' not in st.session_state:
     st.session_state.location = "Tec Digital Hub"
 left, right = st.columns([3,1])
+name ="tu mama"
 
 with left:
     st.title(f"Perfil de {st.session_state.name}")
@@ -26,6 +27,7 @@ with st.popover("Crea tu cuenta o Inscribete"):
                 cuenta = [st.session_state.name, email, password]
                 st.session_state.name = name
                 st.text("Has accesado a tu cuenta exitosamente")
+
 
 st.header(f"Mi ubicacion es {st.session_state.location}")
 with st.expander("Deseo cambiar mi ubicacion"):

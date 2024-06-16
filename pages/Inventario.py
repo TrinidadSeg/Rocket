@@ -4,7 +4,7 @@ import pandas as pd
 
 
 st.write("Inventario de Productos")
-image_path = "pages/Cocacola_01.png"
+image_path = "assets/Cocacola_01.png"
 st.image(image_path, caption="Your Image Caption", width=300)
 
 
