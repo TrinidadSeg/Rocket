@@ -1,5 +1,24 @@
 import streamlit as st
 import pandas as pt
+is_login = False
+
+user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
+
+def compare_user_credentials(username, email, password):
+    user_row = user_data[user_data['Username'] == username]
+    if not user_row.empty:
+        stored_email = user_row.iloc[0]['Email']
+        stored_password = user_row.iloc[0]['Password']
+        if email == stored_email and password == stored_password:
+           st.text("Has ingresado exitosmanete")
+           is_login = True
+        else:
+            st.text("Nombre, correo o contraseña incorrecta")
+    else:
+        st.text("Usario no encontrado.")
+
+
+
 def custom_header(User, background_color):
     html_code = f"""
     <div style="background-color: {background_color}; padding: 10px; border-width:10px; border-color:#E88874;">
@@ -25,19 +44,35 @@ with right:
 
 cuenta = ["", "", ""]
 numero = 818188181
-with st.popover("Crea tu cuenta o Inscribete"):
-    name = st.text_input("Cual es tu nombre")
-    email = st.text_input("Escribe tu correo electronico")
-    password = st.text_input("Escribe tu contrasena")
-    if name and email and password:
-        if st.button("Inscribete"):
-            if name == st.session_state.name:
-                st.text("Ya estas dentro de esta cuenta")
-            else:
-                cuenta = [st.session_state.name, email, password]
-                st.session_state.name = name
-                st.text("Has accesado a tu cuenta exitosamente")
-
+column1,column2 = st.columns(2)
+with column1:
+    with st.popover("Crea tu cuenta o Inscribete"):
+        name = st.text_input("Cual es tu nombre")
+        email = st.text_input("Escribe tu correo electronico")
+        password = st.text_input("Escribe tu contrasena")
+        if name and email and password:
+            if st.button("Inscribete"):
+                if name == st.session_state.name:
+                    st.text("Ya estas dentro de esta cuenta")
+                else:
+                    try:
+                        existing_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')
+                    except FileNotFoundError:
+                        existing_data = pt.DataFrame(columns=['Username','Email','Password'])
+                    new_row = pt.DataFrame({'Username': [name], 'Email': [email], 'Password' : [password]})
+                    user_data = pt.concat([existing_data, new_row], ignore_index=True)
+                    user_data.to_excel('pages/BaseDatos_Usarios.xlsx',index = False)
+                    cuenta = [st.session_state.name, email, password]
+                    st.session_state.name = name
+                    st.text("Has accesado a tu cuenta exitosamente. Porfavor Ingrese con su cuenta")
+with column2:
+    with st.popover("Ingresa a su cuenta"):
+        name = st.text_input("Nombre")
+        email = st.text_input("Correo electronico")
+        password = st.text_input("Contrasena")
+        if st.button("Ingresar"):   
+                user_data = pt.read_excel('pages/BaseDatos_Usarios.xlsx')    
+                compare_user_credentials(name, email, password)
 
 st.subheader(f"Mi ubicacion es {st.session_state.location}")
 
