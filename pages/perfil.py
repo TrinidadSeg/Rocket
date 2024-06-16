@@ -30,7 +30,7 @@ def custom_header(User, background_color):
     </div>
     """
     st.markdown(html_code, unsafe_allow_html=True)
-custom_header("Trini", "fffff")
+custom_header(f"{st.session_state.name}", "fffff")
 
 if 'name'  not in st.session_state:
     st.session_state.name = "Usuario no definido"
