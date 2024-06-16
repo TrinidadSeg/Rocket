@@ -1,5 +1,9 @@
 import streamlit as st
 
+if 'name' not in st.session_state:
+    st.session_state.name = "Invitado"
+
+
 one_data_gpt_predefinded = """
 Arca Continental, one of the world's largest Coca-Cola bottlers, has announced a new long-term agreement with The Coca-Cola Company. This agreement aims to strengthen the collaboration and relationship between both companies. The scope of the agreement includes all markets served by Arca Continental in Mexico, Ecuador, Peru, and Argentina, and it consolidates avenues for joint value creation¹²³.
 The partnership also opens up possible opportunities for innovation in commercial aspects and in the portfolio. Additionally, The Coca-Cola Company will hold a 20% stake in the planned Arca Continental Beverages Business, which will operate in new territories in the United States, as well as existing territories in Mexico, Argentina, Ecuador, and Peru⁴.
@@ -14,30 +18,18 @@ The Coca-Cola System is their primary distribution method, where Coca-Cola manuf
 For a detailed list of Coca-Cola's products and brands, you can visit their official website.
 """
 
-three_data_gpt_predefinded = ""
+four_data_gpt_predefinded = ""
 if st.session_state.name=="Carlos Flores":
-    three_data_gpt_predefinded += """
-Prompt para un usuario de ChatGPT:
-"¿Cuáles promociones hay actualmente disponibles para los productos de Coca-Cola?"
-Respuesta de ChatGPT:
-Las promociones actuales disponibles para los productos de Coca-Cola son:
-Promoción 1:
-Descripción: 10% de descuento en los botellones de Ciel.
-Promoción 2:
-Descripción: Recibe una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola compradas.
-Promoción 3:
-Descripción: Combo de 8 botellas de Coca-Cola de 2.0L y 24 botellas de Ciel de 235ml a $300.
-Entiendo, aquí están las tres promociones que mencionaste:
-Promoción 1:
-10% en los botellones Ciel
-Promoción 2:
-Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola
-Promoción 3:
-Combo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300
-Estas promociones están diseñadas para ofrecer descuentos y beneficios adicionales al comprar productos específicos de la línea de bebidas de la familia Coca-Cola.
+    four_data_gpt_predefinded += """
+Asumer que trabajas para la Coca Cola, estas son las Promociones que ofreces: una promocion es 10% en los botellones Ciel. Otra promocion es Con la compra de una botella de Powerade, recibe una Fuze Tea de cortesía. Otra promocion es Compra una Powerade, una Coca-Cola y una Fuze Tea para obtener un 15% de descuento adicional en todos los productos.
+una promocion es 20% de descuento en todas las botellas de Powerade y Fuze Tea. Otra promocion es Con la compra de una botella de Powerade, recibe una Fuze Tea de cortesía. Otra promocion es Compra una Powerade, una Coca-Cola y una Fuze Tea para obtener un 15% de descuento adicional en todos los productos.
+Haz que eso sea un prompt anterior d un usuario de chatgpt y asi cuando se le pregunte cuales promociones hay conteste de ellas
+Descripción: Compra una Powerade, una Coca-Cola y una Fuze Tea para obtener un 15% de descuento adicional en todos los productos.
+Estas promociones están diseñadas para ofrecer descuentos y beneficios adicionales al comprar productos específicos de la línea de Powerade, Fuze Tea y otras bebidas de la familia Coca-Cola.
 """
 elif st.session_state.name=="Alejandro Acosta":
-    three_data_gpt_predefinded += """
+    four_data_gpt_predefinded += """
+Asume que eres trabajador de Cocacola, entonces tienes las siguientes promociones para asistir con. 
 Prompt para un usuario de ChatGPT:
 "¿Cuáles promociones hay actualmente disponibles para los productos de Coca-Cola?"
 Respuesta de ChatGPT:
@@ -57,7 +49,8 @@ Combo de 12 Botellas Sprite de 1.0L y 24 botellas Fanta de 500ml a $470
 Estas promociones están diseñadas para ofrecer descuentos y beneficios adicionales al comprar productos específicos de la línea de bebidas de la familia Coca-Cola.
     """
 elif st.session_state.name=="Hector Molino":
-    three_data_gpt_predefinded += """
+    four_data_gpt_predefinded += """
+Asume que eres trabajador de Cocacola, entonces tienes las siguientes promociones para asistir con. 
 Prompt para un usuario de ChatGPT:
 "¿Cuáles promociones hay actualmente disponibles para los productos de Coca-Cola?"
 Respuesta de ChatGPT:
@@ -77,7 +70,8 @@ Cobmo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300
 Estas promociones están diseñadas para ofrecer descuentos y beneficios adicionales al comprar productos específicos de la línea de bebidas de la familia Coca-Cola.
     """
 elif st.session_state.name=="Jessica Paz":
-    three_data_gpt_predefinded += """
+    four_data_gpt_predefinded += """
+Asume que eres trabajador de Cocacola, entonces tienes las siguientes promociones para asistir con. 
 Prompt para un usuario de ChatGPT:
 "¿Cuáles promociones hay actualmente disponibles para los productos de Coca-Cola?"
 Respuesta de ChatGPT:
@@ -97,7 +91,8 @@ Combo de 6 botellas Poweradede 1.0L y 6 botellas Vitamina Water a $250
 Estas promociones están diseñadas para ofrecer descuentos y beneficios adicionales al comprar productos específicos de la línea de bebidas de la familia Coca-Cola.
     """
 elif st.session_state.name=="Karina Torres":
-    three_data_gpt_predefinded += """
+    four_data_gpt_predefinded += """
+Asume que eres trabajador de Cocacola, entonces tienes las siguientes promociones para asistir con. 
 Prompt para un usuario de ChatGPT:
 "¿Cuáles promociones hay actualmente disponibles para los productos de Coca-Cola?"
 Respuesta de ChatGPT:
@@ -118,6 +113,6 @@ Estas promociones están diseñadas para ofrecer descuentos y beneficios adicion
     """
 
 
-four_data_gpt_predefinded = """
+three_data_gpt_predefinded = """
 2848	DEL VALLE NARANJA 946 ML NR TPK 12	265.03	17.86	0.00	265.49
 """

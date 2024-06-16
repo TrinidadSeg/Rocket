@@ -58,7 +58,7 @@ with col2:
         st.write("Una botella Vitamin Water de 500ml por cada six-pack de Powerade")
     elif st.session_state.name=="Karina Torres":
         st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-        st.write("Sies latas Del Valle de 250ml por cada docena de Tetrapack Santa Clara de litro.")
+        st.write("Seis latas Del Valle de 250ml por cada docena de Tetrapack Santa Clara de litro.")
     else:
         st.write("Inicie sesión para mas promociones personalizadas")
     st.button("Usar promocion", key="regalo")
