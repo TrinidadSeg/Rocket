@@ -53,6 +53,8 @@ with column1:
         name = st.text_input("Cual es tu nombre")
         email = st.text_input("Escribe tu correo electronico")
         password = st.text_input("Escribe tu contrasena")
+        numero = st.text_input("Cual es tu numero de telefono")
+        ubicacion = st.text_input("Cual es tu ubicacion")
         if name and email and password:
             if st.button("Inscribete"):
                 if name == st.session_state.name:
