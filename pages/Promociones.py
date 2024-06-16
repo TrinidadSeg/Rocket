@@ -45,7 +45,7 @@ with col1:
     
     if not st.session_state.popover_clicked_col1:
         if st.session_state.name == "Carlos Flores":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+            st.image("https://bonndia.com/cdn/shop/files/Screenshot2023-08-24141507.png?v=1696969283", width=100)
             st.write("10% en los botellones Ciel")
         elif st.session_state.name == "Alejandro Acosta":
             st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
@@ -72,16 +72,16 @@ with col2:
     st.subheader("Regalo")
     if not st.session_state.popover_clicked_col2:
         if st.session_state.name=="Carlos Flores":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+            st.image("https://oneiconn.vtexassets.com/arquivos/ids/186903/100111011_1.jpg?v=638367208267000000", width=100)
             st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
         elif st.session_state.name=="Alejandro Acosta":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=100)
             st.write("Una botella Fanta de litro por cada cino bottelas de litro de Coca-Cola")
         elif st.session_state.name=="Hector Molino":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=100)
             st.write("Una lata de Coca-Cola sin azúcar por cada diez latas de Coca-Cola")
         elif st.session_state.name=="Jessica Paz":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
+            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=100)
             st.write("Una botella Vitamin Water de 500ml por cada six-pack de Powerade")
         elif st.session_state.name=="Karina Torres":
             st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
@@ -98,8 +98,8 @@ with col3:
     st.subheader("Combo")
     if not st.session_state.popover_clicked_col3:
         if st.session_state.name=="Carlos Flores":
-            st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
-            st.write("Combo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ceil de 235ml a $300")
+            st.image("https://aguafy.com/wp-content/uploads/2023/10/ciel-600-ml-x-12-botellas.png", width=100)
+            st.write("Combo de 8 Botellas Coca Cola de 2.0L y 24 Botellas Ciel de 235ml a $300")
         elif st.session_state.name=="Alejandro Acosta":
             st.image("https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png", width=50)
             st.write("Combo de 12 Botellas Sprite de 1.0L y 24 botellas Fanta de 500ml a $470")
